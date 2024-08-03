@@ -9,7 +9,6 @@ function App() {
         fetch('https://pokeapi.co/api/v2/pokemon?limit=50')
             .then(response => response.json())
             .then(data => {
-                // Получение детальной информации о каждом покемоне
                 const promises = data.results.map(pokemon =>
                     fetch(pokemon.url).then(res => res.json())
                 );
